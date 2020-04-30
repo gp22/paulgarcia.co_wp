@@ -1,0 +1,5 @@
+.hero {
+	// background: linear-gradient(90deg, $color__blue-700, $color__hero-gradient-100 80%);
+	background: radial-gradient(circle at 70%, $color__hero-gradient-100, $color__blue-700);
+	// background: radial-gradient(circle at 70%, $color__blue-500, $color__blue-700);
+}
