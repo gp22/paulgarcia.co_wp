@@ -10,10 +10,6 @@ Template Name: Home Page
 		$sections = carbon_get_the_post_meta( 'crb_sections' );
 		?>
 
-		<!-- <pre>
-			<?php echo var_export( $sections ); ?>
-		</pre> -->
-
 		<?php
 		foreach ( $sections as $section ) {
         switch ( $section['_type'] ) {
@@ -74,19 +70,30 @@ Template Name: Home Page
             case 'feature_list':
                 ?>
 
-								<div>
+								<section class="container mx-auto pt-6 px-6">
+									<h4 class="italic">What you'll get</h4>
 
-									<ul>
+									<ul class="md:flex md:flex-wrap md:mx-neg">
+
 										<?php foreach ( $section['features'] as $feature ) : ?>
-											<li>
-													<h3><?php echo $feature['feature_title']; ?></h3>
-													<p><?php echo $feature['feature_body']; ?></p>
+
+											<li class="pb-4 mb-4 rounded-b-lg shadow-md  md:mb-0 lg:w-1/3 md:px-8 md:py-6 md:shadow-none md:w-1/2">
+												<div class="bg-blue-200 border-b border-gray-100 flex items-baseline mb-4 px-2 py-4 rounded-t-lg  md:bg-white md:block md:pt-0 md:px-0">
+													<span class="h-10 w-10 rounded-full flex items-center justify-center mr-4  gradient  md:mb-4 md:mr-0"></span>
+													<h5 class="font-display  sm:text-xl md:text-2xl md:w-48">
+														<?php echo $feature['feature_title']; ?>
+													</h5>
+												</div>
+												<p class="font-light px-3 text-gray-100 text-sm  md:pl-0">
+													<?php echo $feature['feature_body']; ?>
+												</p>
 											</li>
+
 										<?php endforeach; ?>
 
 									</ul>
 
-								</div>
+								</section>
 
                 <?php
 						break;
@@ -124,5 +131,9 @@ Template Name: Home Page
     }
     ?>
 <?php endwhile; ?>
+
+<!-- <pre>
+	<?php echo var_export( $sections ); ?>
+</pre> -->
 
 <?php get_footer(); ?>
