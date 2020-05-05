@@ -14,7 +14,7 @@ use Carbon_Fields\Field;
 
 function crb_attach_post_options() {
     Container::make( 'post_meta', 'Landing Page Sections' )
-        ->where( 'post_template', '=', 'template-landing-page.php' )
+        ->where( 'post_template', '=', 'page-home.php' )
         ->add_fields( array(
             Field::make( 'complex', 'crb_sections' )
                 // Hero
@@ -22,6 +22,12 @@ function crb_attach_post_options() {
 										Field::make( 'text', 'hero_heading', 'Hero Heading' ),
 										Field::make( 'text', 'hero_subhead', 'Hero Subhead' ),
 										Field::make( 'image', 'hero_image', 'Hero Image' ),
+								) )
+
+                // Blockquote
+                ->add_fields( 'blockquote', 'Blockquote', array(
+										Field::make( 'text', 'quote_text', 'Quote Text' ),
+										Field::make( 'text', 'quote_attr', 'Quote Attribute' ),
 								) )
 
                 // Feature list ( "what you'll get" ) section
