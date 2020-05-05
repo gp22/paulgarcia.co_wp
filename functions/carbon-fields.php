@@ -31,34 +31,25 @@ function crb_attach_post_options() {
 								) )
 
                 // Feature list ( "what you'll get" ) section
-                ->add_fields( 'feature_list', 'Feature List', array(
-										Field::make( 'complex', 'features', 'Features' )
-											->add_fields( array(
-												Field::make( 'text', 'feature_title', 'Feature Title' ),
-												Field::make( 'text', 'feature_body', 'Feature Body' ),
-											) ),
+                ->add_fields( 'feature_list', array(
+										Field::make( 'complex', 'features' )
+												->add_fields( array(
+														Field::make( 'text', 'feature_title' ),
+														Field::make( 'text', 'feature_body' ),
+												) ),
+								) )
+
+                // Qualifier ( "wonder if we're a good fit?" ) section
+                ->add_fields( 'qualifier', array(
+										Field::make( 'complex', 'qualifier_text_box' )
+												->add_fields( array(
+														Field::make( 'text', 'qualifier_text' ),
+												) ),
+										Field::make( 'complex', 'disqualifier_text_box' )
+												->add_fields( array(
+														Field::make( 'text', 'disqualifier_text' ),
+												) ),
                 ) )
-
-                // Second group will be a list of files for users to download
-                // ->add_fields( 'file_list', 'File List', array(
-                //     Field::make( 'complex', 'files', 'Files' )
-                //         ->add_fields( array(
-								// 						Field::make( 'text', 'title', 'Title' ),
-                //             Field::make( 'file', 'file', 'File' ),
-                //         ) ),
-                // ) )
-
-                // Third group will be a list of manually selected posts
-                // used as a simple curated "Related posts" listing
-                // ->add_fields( 'related_posts', 'Related Posts', array(
-                //     Field::make( 'association', 'posts', 'Posts' )
-                //         ->set_types( array(
-                //             array(
-                //                 'type' => 'post',
-                //                 'post_type' => 'post',
-                //             ),
-                //         ) ),
-                // ) ),
         ) );
 }
 add_action( 'carbon_fields_register_fields', 'crb_attach_post_options' );
