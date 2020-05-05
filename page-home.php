@@ -20,7 +20,6 @@ Template Name: Home Page
 						case 'hero':
 							?>
 
-
 							<section class="hero">
 								<div class="container mx-auto px-6 py-16 flex flex-col items-center justify-between  lg:flex-row lg:pt-32">
 									<div class="max-w-lg">
@@ -54,6 +53,22 @@ Template Name: Home Page
 							</section>
 
 							<?php
+						break;
+
+            case 'blockquote':
+                ?>
+
+								<div class="container mx-auto pt-6 px-6">
+
+										<blockquote class="bg-blue-100 border-2 border-blue-500 py-5 px-6 mb-4 max-w-xl relative">
+												<svg width="26.807" height="23.456" viewBox="0 0 26.807 23.456" class="absolute  quote-left"><path d="M24.294 43.728h-4.188v-3.351a3.354 3.354 0 013.351-3.351h.419a1.254 1.254 0 001.257-1.257v-2.512A1.254 1.254 0 0023.875 32h-.419a8.375 8.375 0 00-8.377 8.377v12.566a2.514 2.514 0 002.513 2.513h6.7a2.514 2.514 0 002.513-2.513v-6.7a2.514 2.514 0 00-2.511-2.515zm-15.079 0H5.026v-3.351a3.354 3.354 0 013.351-3.351H8.8a1.254 1.254 0 001.257-1.257v-2.512A1.254 1.254 0 008.8 32h-.423A8.375 8.375 0 000 40.377v12.566a2.514 2.514 0 002.513 2.513h6.7a2.514 2.514 0 002.513-2.513v-6.7a2.514 2.514 0 00-2.511-2.515z" transform="translate(0 -32)" fill="#e6f0ff"></path></svg>
+												<p class="text-blue-600 mb-3 relative"><?php echo $section['quote_text']; ?></p>
+												<cite class="text-blue-400 font-light">— <?php echo $section['quote_attr']; ?></cite>
+										</blockquote>
+
+								</div>
+
+                <?php
 						break;
 
             case 'feature_list':
