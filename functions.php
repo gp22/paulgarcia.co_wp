@@ -201,7 +201,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Functions
  * Require all PHP files in the /functions/ directory
  */
-foreach (glob(get_template_directory() . "/functions/*.php") as $function) {
-	$function= basename($function);
-	require get_template_directory() . '/functions/' . $function;
-}
+// foreach (glob(get_template_directory() . "/functions/*.php") as $function) {
+// 	$function= basename($function);
+// 	require get_template_directory() . '/functions/' . $function;
+// }
