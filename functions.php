@@ -121,7 +121,7 @@ add_action( 'widgets_init', '_s_widgets_init' );
  */
 function _s_scripts() {
 	// Loads Google Fonts
-	wp_enqueue_style( 'google-fonts-css', 'href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap"', [], '', 'all' );
+	wp_enqueue_style( 'google-fonts-css', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap', [], '', 'all' );
 
 	// Loads required CSS header only.
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
