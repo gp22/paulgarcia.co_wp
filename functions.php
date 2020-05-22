@@ -205,3 +205,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 // 	$function= basename($function);
 // 	require get_template_directory() . '/functions/' . $function;
 // }
+
+/**
+ * Custom Gutenberg blocks
+ */
+require get_template_directory() . '/inc/gutenberg.php';
