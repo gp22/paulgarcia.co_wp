@@ -1,14 +1,16 @@
 const path = require('path');
+const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 
-module.exports = {
+module.exports = (env, argv) => ({
   context: __dirname,
   entry: {
-    frontend: ['./src/index.js', './src/sass/style.scss'],
+    frontend: ['./src/index.js', './src/css/style.css', './src/sass/style.scss'],
     customizer: './src/customizer.js'
   },
   output: {
@@ -31,7 +33,18 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: [require('tailwindcss'), require('autoprefixer')]
+            }
+          },
+          'sass-loader'
+        ]
       },
       {
         test: /\.svg$/,
@@ -64,9 +77,17 @@ module.exports = {
     new BrowserSyncPlugin({
       files: '**/*.php',
       proxy: 'http://paulgarciaco.local/'
-    })
+    }),
+    ...(argv.mode === 'production'
+      ? [
+          new PurgecssPlugin({
+            paths: glob.sync(`${path.resolve(__dirname)}/**/*.php`, { nodir: true }),
+            defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+          })
+        ]
+      : [])
   ],
   optimization: {
     minimizer: [new UglifyJsPlugin(), new OptimizeCssAssetsPlugin()]
   }
-};
+});
