@@ -13,9 +13,14 @@
 	top: 0.5rem;
 }
 
-.transition,
+.transition {
+	transition: opacity 0.3s ease,
+							color 0.3s ease,
+							background 0.3s ease,
+}
+
 .phone-solid {
-	transition: all 0.3s ease;
+	transition: fill 0.3s ease;
 }
 
 .cta-button {

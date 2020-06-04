@@ -150,13 +150,13 @@ class Primary_Menu_Walker extends Walker_Nav_Menu {
 		$title = $item->title;
 		$description = $item->description;
 		$permalink = $item->url;
-		$a_classes = 'border-b-2';
-		$li_classes = 'hover:opacity-50 transition';
+		$a_classes = 'flex justify-center  sm:border-b-2';
+		$li_classes = 'transition w-1/2  hover:opacity-75 sm:w-auto';
 
 		if ( $title != 'contact' ) {
-			$li_classes .= ' ' . 'mr-6';
+			$li_classes .= ' ' . 'border border-gray-100  sm:border-0 sm:mr-6';
 		} else {
-			$li_classes .= ' ' . 'font-bold';
+			$li_classes .= ' ' . 'font-bold bg-gray-200 text-white  sm:bg-white sm:text-gray-200';
 		}
 
 		$output .= "<li class='" . $li_classes . ' ' . implode(" ", $item->classes) . "'>";
