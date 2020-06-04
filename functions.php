@@ -79,6 +79,12 @@ if ( ! function_exists( '_s_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		// Add support for editor styles.
+		// add_theme_support( 'editor-styles' );
+
+		// Enqueue editor styles.
+		// add_editor_style( get_stylesheet_directory_uri() . '/public/style-editor.css' );
 	}
 endif;
 add_action( 'after_setup_theme', '_s_setup' );
@@ -201,12 +207,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Functions
  * Require all PHP files in the /functions/ directory
  */
-// foreach (glob(get_template_directory() . "/functions/*.php") as $function) {
-// 	$function= basename($function);
-// 	require get_template_directory() . '/functions/' . $function;
-// }
+foreach (glob(get_template_directory() . "/functions/*.php") as $function) {
+	$function= basename($function);
+	require get_template_directory() . '/functions/' . $function;
+}
 
 /**
- * Custom Gutenberg blocks
+ * Register custom Gutenberg blocks
  */
-require get_template_directory() . '/inc/gutenberg.php';
+// require get_template_directory() . '/inc/gutenberg.php';

@@ -9,8 +9,9 @@
  **/
 
 const { registerBlockType } = wp.blocks;
-const { RichText, InspectorControls, ColorPalette, MediaUpload } = wp.blockEditor;
-const { PanelBody, IconButton } = wp.components;
+const { RichText, InspectorControls, ColorPalette, MediaUpload, InnerBlocks, BlockControls, AlignmentToolbar } = wp.blockEditor;
+const { PanelBody, IconButton, RangeControl } = wp.components;
+const ALLOWED_BLOCKS = ['core/button'];
 
 registerBlockType('pgarcia/custom-cta', {
   title: 'Call to Action',
@@ -32,24 +33,30 @@ registerBlockType('pgarcia/custom-cta', {
       source: 'html',
       selector: 'p'
     },
+    alignment: {
+      type: 'string',
+      default: ''
+    },
     backgroundImage: {
       type: 'string',
-      default: null
+      default: ''
+    },
+    overlayColor: {
+      type: 'string',
+      default: 'black'
+    },
+    overlayOpacity: {
+      type: 'number',
+      default: 1
     }
   },
   edit: ({ attributes, setAttributes }) => {
-    const { title, body, titleColor, backgroundImage } = attributes;
+    const { title, body, alignment, titleColor, backgroundImage, overlayColor, overlayOpacity } = attributes;
 
     function onChange(type, value) {
+      if (type === 'backgroundImage') value = value.sizes.full.url;
+
       setAttributes({ [type]: value });
-    }
-
-    function onTitleColorChange(newColor) {
-      setAttributes({ titleColor: newColor });
-    }
-
-    function onSelectImage(newImage) {
-      setAttributes({ backgroundImage: newImage.sizes.full.url });
     }
 
     return [
@@ -58,11 +65,11 @@ registerBlockType('pgarcia/custom-cta', {
           <p>
             <strong>Select a Title color:</strong>
           </p>
-          <ColorPalette value={titleColor} onChange={onTitleColorChange} />
+          <ColorPalette value={titleColor} onChange={e => onChange('titleColor', e)} />
         </PanelBody>
         <PanelBody title="Background Image Settings">
           <MediaUpload
-            onSelect={onSelectImage}
+            onSelect={e => onChange('backgroundImage', e)}
             type="image"
             value={backgroundImage}
             render={({ open }) => (
@@ -71,9 +78,32 @@ registerBlockType('pgarcia/custom-cta', {
               </IconButton>
             )}
           />
+          <div style={{ margin: '20px 0 40px' }}>
+            <p>
+              <strong>Overlay color:</strong>
+            </p>
+            <ColorPalette value={overlayColor} onChange={e => onChange('overlayColor', e)} />
+          </div>
+          <RangeControl
+            label="Overlay Opacity"
+            value={overlayOpacity}
+            onChange={e => onChange('overlayOpacity', e)}
+            min={0}
+            max={1}
+            step={0.05}
+          />
         </PanelBody>
       </InspectorControls>,
-      <div className="cta-container">
+      <div
+        className="cta-container"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="cta-overlay" style={{ background: overlayColor, opacity: overlayOpacity }}></div>
         <RichText
           key="editable"
           tagName="h2"
@@ -89,22 +119,27 @@ registerBlockType('pgarcia/custom-cta', {
           value={body}
           onChange={e => onChange('body', e)}
         />
+        <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
       </div>
     ];
   },
   save: ({ attributes }) => {
-    const { title, body, titleColor } = attributes;
-
+    const { title, body, titleColor, backgroundImage, overlayColor, overlayOpacity } = attributes;
+    console.log(backgroundImage);
     return (
-      <div className="cta-container">
-        <p></p>
-        <ul>
-          <li>
-            <p>lajskldfjlasfdlkas</p>
-          </li>
-        </ul>
+      <div
+        className="cta-container"
+        // style={{
+        //   backgroundImage: `url(${backgroundImage})`,
+        //   backgroundSize: 'cover',
+        //   backgroundPosition: 'center',
+        //   backgroundRepeat: 'no-repeat'
+        // }}
+      >
+        <div className="cta-overlay" style={{ background: overlayColor, opacity: overlayOpacity }}></div>
         <RichText.Content tagName="h2" value={title} style={{ color: titleColor }} />
         <RichText.Content tagName="p" value={body} />
+        <img src={backgroundImage} alt="" />
       </div>
     );
   }

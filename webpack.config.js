@@ -11,8 +11,9 @@ module.exports = (env, argv) => ({
   context: __dirname,
   entry: {
     frontend: ['./src/index.js', './src/css/style.css', './src/sass/style.scss'],
-    customizer: './src/customizer.js',
-    'gutenberg-cta-block': './src/js/gutenberg/gutenberg-cta-block.js'
+    // 'style-editor': ['./src/sass/style-editor.scss'],
+    customizer: './src/customizer.js'
+    // 'gutenberg-cta-block': './src/js/gutenberg/gutenberg-cta-block.js'
   },
   output: {
     path: path.resolve(__dirname, 'public'),
