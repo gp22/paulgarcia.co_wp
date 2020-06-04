@@ -11,7 +11,9 @@ module.exports = (env, argv) => ({
   context: __dirname,
   entry: {
     frontend: ['./src/index.js', './src/css/style.css', './src/sass/style.scss'],
+    // 'style-editor': ['./src/sass/style-editor.scss'],
     customizer: './src/customizer.js'
+    // 'gutenberg-cta-block': './src/js/gutenberg/gutenberg-cta-block.js'
   },
   output: {
     path: path.resolve(__dirname, 'public'),
@@ -24,11 +26,11 @@ module.exports = (env, argv) => ({
       {
         enforce: 'pre',
         exclude: /node_modules/,
-        test: /\.jsx$/,
+        test: /\.(js|jsx)$/,
         loader: 'eslint-loader'
       },
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         loader: 'babel-loader'
       },
       {

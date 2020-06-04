@@ -8,6 +8,26 @@
 	top: 0.32rem;
 }
 
+.phone-solid {
+	right: 0.8rem;
+	top: 0.5rem;
+}
+
+.transition,
+.phone-solid {
+	transition: all 0.3s ease;
+}
+
+.cta-button {
+
+	&:hover {
+
+		.phone-solid {
+			fill: $color__white;
+		}
+	}
+}
+
 .gradient {
 	// background: linear-gradient(#95bff0,#1f5a99 50%);
 	background: radial-gradient(circle at 70%, $color__hero-gradient-100, $color__blue-700);
@@ -19,12 +39,14 @@
 	// background: radial-gradient(circle at 70%, $color__blue-500, $color__blue-700);
 }
 
-.quote-left {
-  top: .7rem;
-  left: .7rem;
-  z-index: 0;
+.list-style {
+	height: 1rem;
+	left: -2rem;
+	top: 0.25rem;
 }
 
-.transition {
-	transition: all 0.3s ease;
+.quote-left {
+	left: 0.7rem;
+	top: 0.7rem;
+	z-index: 0;
 }

@@ -79,6 +79,12 @@ if ( ! function_exists( '_s_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		// Add support for editor styles.
+		// add_theme_support( 'editor-styles' );
+
+		// Enqueue editor styles.
+		// add_editor_style( get_stylesheet_directory_uri() . '/public/style-editor.css' );
 	}
 endif;
 add_action( 'after_setup_theme', '_s_setup' );
@@ -121,7 +127,7 @@ add_action( 'widgets_init', '_s_widgets_init' );
  */
 function _s_scripts() {
 	// Loads Google Fonts
-	wp_enqueue_style( 'google-fonts-css', 'href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap"', [], '', 'all' );
+	wp_enqueue_style( 'google-fonts-css', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap', [], '', 'all' );
 
 	// Loads required CSS header only.
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
@@ -201,7 +207,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Functions
  * Require all PHP files in the /functions/ directory
  */
-// foreach (glob(get_template_directory() . "/functions/*.php") as $function) {
-// 	$function= basename($function);
-// 	require get_template_directory() . '/functions/' . $function;
-// }
+foreach (glob(get_template_directory() . "/functions/*.php") as $function) {
+	$function= basename($function);
+	require get_template_directory() . '/functions/' . $function;
+}
+
+/**
+ * Register custom Gutenberg blocks
+ */
+// require get_template_directory() . '/inc/gutenberg.php';
