@@ -74,60 +74,60 @@ Template Name: Home Page
 
 	<section class="container mx-auto px-6 mb-24">
 		<h4 class="italic">What you'll get</h4>
-			<div class="md:overflow-hidden">
+		<div class="md:overflow-hidden">
 
-				<ul class="md:flex md:flex-wrap md:mx-neg">
+			<ul class="md:flex md:flex-wrap md:mx-neg">
 
-					<li class="pb-4 mb-4 rounded-b-lg shadow-md  md:mb-0 lg:w-1/3 md:px-8 md:py-6 md:shadow-none md:w-1/2">
-						<div class="bg-blue-200 border-b border-gray-100 flex items-baseline mb-4 px-2 py-4 rounded-t-lg  md:bg-white md:block md:pt-0 md:px-0">
-							<span class="h-10 w-10 rounded-full flex items-center justify-center mr-4  gradient  md:mb-4 md:mr-0"><svg width="24" height="24" viewBox="0 0 24 24"><path data-name="Rectangle 32" fill="none" d="M0 0H24V24H0z"></path><g data-name="Group 22"><g data-name="Group 18"><path data-name="Path 10" d="M6 22v-4H4a2 2 0 01-2-2V4a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2h-8.667zM4 4v12h4v2l2.667-2H20V4z" transform="translate(2 2) translate(-2 -2)" fill="#fafcff"></path></g><g data-name="Group 19"><path data-name="Path 11" d="M7.422 11a4.993 4.993 0 009.156 0z" transform="translate(2 2) translate(5.422 9) translate(-7.422 -11)" fill="#fafcff"></path></g><g data-name="Group 20"><circle data-name="Ellipse 2" cx="1.25" cy="1.25" r="1.25" fill="#fafcff" transform="translate(2 2) translate(5.75 4)"></circle></g><g data-name="Group 21"><circle data-name="Ellipse 3" cx="1.25" cy="1.25" r="1.25" fill="#fafcff" transform="translate(2 2) translate(11.75 4)"></circle></g></g></svg></span>
-							<h5 class="font-display  sm:text-xl md:text-2xl md:w-48">Proactive communication</h5>
-						</div>
-						<p class="font-light px-3 text-gray-100 text-sm  md:pl-0">You’ll know exactly what’s going on at every step. No more waiting for emails that never arrive.</p>
-					</li>
+				<li class="pb-4 mb-4 rounded-b-lg shadow-md  md:mb-0 lg:w-1/3 md:px-8 md:py-6 md:shadow-none md:w-1/2">
+					<div class="bg-blue-200 border-b border-gray-100 flex items-baseline mb-4 px-2 py-4 rounded-t-lg  md:bg-white md:block md:pt-0 md:px-0">
+						<span class="h-10 w-10 rounded-full flex items-center justify-center mr-4  gradient  md:mb-4 md:mr-0"><svg width="24" height="24" viewBox="0 0 24 24"><path data-name="Rectangle 32" fill="none" d="M0 0H24V24H0z"></path><g data-name="Group 22"><g data-name="Group 18"><path data-name="Path 10" d="M6 22v-4H4a2 2 0 01-2-2V4a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2h-8.667zM4 4v12h4v2l2.667-2H20V4z" transform="translate(2 2) translate(-2 -2)" fill="#fafcff"></path></g><g data-name="Group 19"><path data-name="Path 11" d="M7.422 11a4.993 4.993 0 009.156 0z" transform="translate(2 2) translate(5.422 9) translate(-7.422 -11)" fill="#fafcff"></path></g><g data-name="Group 20"><circle data-name="Ellipse 2" cx="1.25" cy="1.25" r="1.25" fill="#fafcff" transform="translate(2 2) translate(5.75 4)"></circle></g><g data-name="Group 21"><circle data-name="Ellipse 3" cx="1.25" cy="1.25" r="1.25" fill="#fafcff" transform="translate(2 2) translate(11.75 4)"></circle></g></g></svg></span>
+						<h5 class="font-display  sm:text-xl md:text-2xl md:w-48">Proactive communication</h5>
+					</div>
+					<p class="font-light px-3 text-gray-100 text-sm  md:pl-0">You’ll know exactly what’s going on at every step. No more waiting for emails that never arrive.</p>
+				</li>
 
-					<li class="pb-4 mb-4 rounded-b-lg shadow-md  md:mb-0 lg:w-1/3 md:px-8 md:py-6 md:shadow-none md:w-1/2">
-						<div class="bg-blue-200 border-b border-gray-100 flex items-baseline mb-4 px-2 py-4 rounded-t-lg  md:bg-white md:block md:pt-0 md:px-0">
-							<span class="h-10 w-10 rounded-full flex items-center justify-center mr-4  gradient  md:mb-4 md:mr-0"><svg width="24" height="24" viewBox="0 0 24 24"><path data-name="Rectangle 26" fill="none" d="M0 0H24V24H0z"></path><g data-name="Group 17" fill="#fafcff" transform="translate(1 1)"><path data-name="Path 8" d="M21 3h-3V1h-2v6h2V5h3v15H3V5h2V3H3a2 2 0 00-2 2v15a2 2 0 002 2h18a2 2 0 002-2V5a2 2 0 00-2-2z" transform="translate(-1 -1)"></path><path data-name="Path 9" d="M8 5h7V3H8V1H6v6h2z" transform="translate(-1 -1)"></path><path data-name="Rectangle 27" transform="translate(4 8)" d="M0 0H4V4H0z"></path><path data-name="Rectangle 28" transform="translate(9 8)" d="M0 0H4V4H0z"></path><path data-name="Rectangle 29" transform="translate(14 8)" d="M0 0H4V4H0z"></path><path data-name="Rectangle 30" transform="translate(4 13)" d="M0 0H4V4H0z"></path><path data-name="Rectangle 31" transform="translate(9 13)" d="M0 0H4V4H0z"></path></g></svg></span>
-							<h5 class="font-display  sm:text-xl md:text-2xl md:w-48">Clear deadlines and deliverables</h5>
-						</div>
-						<p class="font-light px-3 text-gray-100 text-sm  md:pl-0">My goal is to set clear deliverables, deadlines, and expectations. And meet them!</p>
-					</li>
+				<li class="pb-4 mb-4 rounded-b-lg shadow-md  md:mb-0 lg:w-1/3 md:px-8 md:py-6 md:shadow-none md:w-1/2">
+					<div class="bg-blue-200 border-b border-gray-100 flex items-baseline mb-4 px-2 py-4 rounded-t-lg  md:bg-white md:block md:pt-0 md:px-0">
+						<span class="h-10 w-10 rounded-full flex items-center justify-center mr-4  gradient  md:mb-4 md:mr-0"><svg width="24" height="24" viewBox="0 0 24 24"><path data-name="Rectangle 26" fill="none" d="M0 0H24V24H0z"></path><g data-name="Group 17" fill="#fafcff" transform="translate(1 1)"><path data-name="Path 8" d="M21 3h-3V1h-2v6h2V5h3v15H3V5h2V3H3a2 2 0 00-2 2v15a2 2 0 002 2h18a2 2 0 002-2V5a2 2 0 00-2-2z" transform="translate(-1 -1)"></path><path data-name="Path 9" d="M8 5h7V3H8V1H6v6h2z" transform="translate(-1 -1)"></path><path data-name="Rectangle 27" transform="translate(4 8)" d="M0 0H4V4H0z"></path><path data-name="Rectangle 28" transform="translate(9 8)" d="M0 0H4V4H0z"></path><path data-name="Rectangle 29" transform="translate(14 8)" d="M0 0H4V4H0z"></path><path data-name="Rectangle 30" transform="translate(4 13)" d="M0 0H4V4H0z"></path><path data-name="Rectangle 31" transform="translate(9 13)" d="M0 0H4V4H0z"></path></g></svg></span>
+						<h5 class="font-display  sm:text-xl md:text-2xl md:w-48">Clear deadlines and deliverables</h5>
+					</div>
+					<p class="font-light px-3 text-gray-100 text-sm  md:pl-0">My goal is to set clear deliverables, deadlines, and expectations. And meet them!</p>
+				</li>
 
-					<li class="pb-4 mb-4 rounded-b-lg shadow-md  md:mb-0 lg:w-1/3 md:px-8 md:py-6 md:shadow-none md:w-1/2">
-						<div class="bg-blue-200 border-b border-gray-100 flex items-baseline mb-4 px-2 py-4 rounded-t-lg  md:bg-white md:block md:pt-0 md:px-0">
-							<span class="h-10 w-10 rounded-full flex items-center justify-center mr-4  gradient  md:mb-4 md:mr-0"><svg width="24" height="24" viewBox="0 0 24 24"><path data-name="Rectangle 25" fill="none" d="M0 0H24V24H0z"></path><path data-name="Path 7" d="M22 5.07a2.979 2.979 0 00-.878-2.121 3.071 3.071 0 00-4.243 0L6.67 13.158a3.938 3.938 0 00-2.519 1.105 4.061 4.061 0 00-1.309 3.564 2.575 2.575 0 01-.923 2.411L.477 21.68a22.806 22.806 0 003.244.32c1.5 0 4.276-.271 6.085-2.08a3.956 3.956 0 001.146-2.561L21.121 7.191A2.976 2.976 0 0022 5.07zM8.393 18.506a6.163 6.163 0 01-3.865 1.464 4.651 4.651 0 00.312-2.241 2.274 2.274 0 012.139-2.637 2 2 0 011.414 3.414zM19.707 5.777l-9.293 9.293a4 4 0 00-.607-.807 3.724 3.724 0 00-.815-.6l9.3-9.3a1.025 1.025 0 011.414 0 1 1 0 010 1.414z" transform="translate(.477 2.099) translate(-.477 -2.099)" fill="#fafcff"></path></svg></span>
-							<h5 class="font-display  sm:text-xl md:text-2xl md:w-48">Custom-designed solution</h5>
-						</div>
-						<p class="font-light px-3 text-gray-100 text-sm  md:pl-0">I’ll deliver an experience that’s custom-tailored to your business. No cookie-cutter designs.</p>
-					</li>
+				<li class="pb-4 mb-4 rounded-b-lg shadow-md  md:mb-0 lg:w-1/3 md:px-8 md:py-6 md:shadow-none md:w-1/2">
+					<div class="bg-blue-200 border-b border-gray-100 flex items-baseline mb-4 px-2 py-4 rounded-t-lg  md:bg-white md:block md:pt-0 md:px-0">
+						<span class="h-10 w-10 rounded-full flex items-center justify-center mr-4  gradient  md:mb-4 md:mr-0"><svg width="24" height="24" viewBox="0 0 24 24"><path data-name="Rectangle 25" fill="none" d="M0 0H24V24H0z"></path><path data-name="Path 7" d="M22 5.07a2.979 2.979 0 00-.878-2.121 3.071 3.071 0 00-4.243 0L6.67 13.158a3.938 3.938 0 00-2.519 1.105 4.061 4.061 0 00-1.309 3.564 2.575 2.575 0 01-.923 2.411L.477 21.68a22.806 22.806 0 003.244.32c1.5 0 4.276-.271 6.085-2.08a3.956 3.956 0 001.146-2.561L21.121 7.191A2.976 2.976 0 0022 5.07zM8.393 18.506a6.163 6.163 0 01-3.865 1.464 4.651 4.651 0 00.312-2.241 2.274 2.274 0 012.139-2.637 2 2 0 011.414 3.414zM19.707 5.777l-9.293 9.293a4 4 0 00-.607-.807 3.724 3.724 0 00-.815-.6l9.3-9.3a1.025 1.025 0 011.414 0 1 1 0 010 1.414z" transform="translate(.477 2.099) translate(-.477 -2.099)" fill="#fafcff"></path></svg></span>
+						<h5 class="font-display  sm:text-xl md:text-2xl md:w-48">Custom-designed solution</h5>
+					</div>
+					<p class="font-light px-3 text-gray-100 text-sm  md:pl-0">I’ll deliver an experience that’s custom-tailored to your business. No cookie-cutter designs.</p>
+				</li>
 
-					<li class="pb-4 mb-4 rounded-b-lg shadow-md  md:mb-0 lg:w-1/3 md:px-8 md:py-6 md:shadow-none md:w-1/2">
-						<div class="bg-blue-200 border-b border-gray-100 flex items-baseline mb-4 px-2 py-4 rounded-t-lg  md:bg-white md:block md:pt-0 md:px-0">
-							<span class="h-10 w-10 rounded-full flex items-center justify-center mr-4  gradient  md:mb-4 md:mr-0"><svg width="24" height="24" viewBox="0 0 24 24"><path data-name="Rectangle 33" fill="none" d="M0 0H24V24H0z"></path><g data-name="Group 23" fill="#fafcff"><path data-name="Path 12" d="M12 20H4v-1h8v-2H4V7h12v1h2V4a2 2 0 00-2-2H4a2 2 0 00-2 2v16a2 2 0 002 2h8zM4 4h12v1H4z" transform="translate(2 2) translate(-2 -2)"></path><path data-name="Path 13" d="M20 10h-4a2 2 0 00-2 2v8a2 2 0 002 2h4a2 2 0 002-2v-8a2 2 0 00-2-2zm0 2v5h-4v-5zm-4 8v-1h4v1z" transform="translate(2 2) translate(-2 -2)"></path></g></svg></span>
-							<h5 class="font-display  sm:text-xl md:text-2xl md:w-48">Looks good on every device</h5>
-						</div>
-						<p class="font-light px-3 text-gray-100 text-sm  md:pl-0">To show your audience they can trust you and that yours is the business they’re looking for.</p>
-					</li>
+				<li class="pb-4 mb-4 rounded-b-lg shadow-md  md:mb-0 lg:w-1/3 md:px-8 md:py-6 md:shadow-none md:w-1/2">
+					<div class="bg-blue-200 border-b border-gray-100 flex items-baseline mb-4 px-2 py-4 rounded-t-lg  md:bg-white md:block md:pt-0 md:px-0">
+						<span class="h-10 w-10 rounded-full flex items-center justify-center mr-4  gradient  md:mb-4 md:mr-0"><svg width="24" height="24" viewBox="0 0 24 24"><path data-name="Rectangle 33" fill="none" d="M0 0H24V24H0z"></path><g data-name="Group 23" fill="#fafcff"><path data-name="Path 12" d="M12 20H4v-1h8v-2H4V7h12v1h2V4a2 2 0 00-2-2H4a2 2 0 00-2 2v16a2 2 0 002 2h8zM4 4h12v1H4z" transform="translate(2 2) translate(-2 -2)"></path><path data-name="Path 13" d="M20 10h-4a2 2 0 00-2 2v8a2 2 0 002 2h4a2 2 0 002-2v-8a2 2 0 00-2-2zm0 2v5h-4v-5zm-4 8v-1h4v1z" transform="translate(2 2) translate(-2 -2)"></path></g></svg></span>
+						<h5 class="font-display  sm:text-xl md:text-2xl md:w-48">Looks good on every device</h5>
+					</div>
+					<p class="font-light px-3 text-gray-100 text-sm  md:pl-0">To show your audience they can trust you and that yours is the business they’re looking for.</p>
+				</li>
 
-					<li class="pb-4 mb-4 rounded-b-lg shadow-md  md:mb-0 lg:w-1/3 md:px-8 md:py-6 md:shadow-none md:w-1/2">
-						<div class="bg-blue-200 border-b border-gray-100 flex items-baseline mb-4 px-2 py-4 rounded-t-lg  md:bg-white md:block md:pt-0 md:px-0">
-							<span class="h-10 w-10 rounded-full flex items-center justify-center mr-4  gradient  md:mb-4 md:mr-0"><svg width="24" height="24" viewBox="0 0 24 24"><path data-name="Rectangle 34" fill="none" d="M0 0H24V24H0z"></path><path data-name="Path 14" d="M22 3H2a2 2 0 00-2 2v13a2 2 0 002 2h9v2H7v2h10v-2h-4v-2h9a2 2 0 002-2V5a2 2 0 00-2-2zm0 2v10H2V5zM2 18v-1h20v1z" transform="translate(0 3) translate(0 -3)" fill="#fafcff"></path></svg></span>
-							<h5 class="font-display  sm:text-xl md:text-2xl md:w-48">Works well on mobile and desktop</h5>
-						</div>
-						<p class="font-light px-3 text-gray-100 text-sm  md:pl-0">Give your audience what they expect, and provide a great experience no matter what.</p>
-					</li>
+				<li class="pb-4 mb-4 rounded-b-lg shadow-md  md:mb-0 lg:w-1/3 md:px-8 md:py-6 md:shadow-none md:w-1/2">
+					<div class="bg-blue-200 border-b border-gray-100 flex items-baseline mb-4 px-2 py-4 rounded-t-lg  md:bg-white md:block md:pt-0 md:px-0">
+						<span class="h-10 w-10 rounded-full flex items-center justify-center mr-4  gradient  md:mb-4 md:mr-0"><svg width="24" height="24" viewBox="0 0 24 24"><path data-name="Rectangle 34" fill="none" d="M0 0H24V24H0z"></path><path data-name="Path 14" d="M22 3H2a2 2 0 00-2 2v13a2 2 0 002 2h9v2H7v2h10v-2h-4v-2h9a2 2 0 002-2V5a2 2 0 00-2-2zm0 2v10H2V5zM2 18v-1h20v1z" transform="translate(0 3) translate(0 -3)" fill="#fafcff"></path></svg></span>
+						<h5 class="font-display  sm:text-xl md:text-2xl md:w-48">Works well on mobile and desktop</h5>
+					</div>
+					<p class="font-light px-3 text-gray-100 text-sm  md:pl-0">Give your audience what they expect, and provide a great experience no matter what.</p>
+				</li>
 
-					<li class="pb-4 mb-4 rounded-b-lg shadow-md  md:mb-0 lg:w-1/3 md:px-8 md:py-6 md:shadow-none md:w-1/2">
-						<div class="bg-blue-200 border-b border-gray-100 flex items-baseline mb-4 px-2 py-4 rounded-t-lg  md:bg-white md:block md:pt-0 md:px-0">
-							<span class="h-10 w-10 rounded-full flex items-center justify-center mr-4  gradient  md:mb-4 md:mr-0"><svg width="24" height="24" viewBox="0 0 24 24"><path data-name="Rectangle 35" fill="none" d="M0 0H24V24H0z"></path><path data-name="Path 15" d="M20.754 21.015L20.582 21a4.38 4.38 0 00-.284.016c-.179.013-.451.034-.781.034-2.721 0-4.18-1.334-4.458-4.049H19V15h-4v-2h3.363A4.409 4.409 0 0023 8.636 4.642 4.642 0 0018.363 4a5.063 5.063 0 00-2.271.492 4.606 4.606 0 00-8.184 0A5.067 5.067 0 005.637 4 4.642 4.642 0 001 8.636 4.407 4.407 0 005.637 13H9v2H5v2h3.942c-.278 2.715-1.738 4.049-4.458 4.049-.331 0-.6-.021-.781-.034A5.076 5.076 0 003.418 21l-.172.015A1.5 1.5 0 003.5 24h17a1.5 1.5 0 00.258-2.985zM10 11H5.637A2.44 2.44 0 013 8.636 2.64 2.64 0 015.637 6a2.486 2.486 0 012.01.777 1 1 0 001.757-.5 2.619 2.619 0 015.192 0 1 1 0 001.757.5A2.487 2.487 0 0118.363 6 2.64 2.64 0 0121 8.636 2.44 2.44 0 0118.363 11H14a1 1 0 00-1 1v3h-2v-3a1 1 0 00-1-1zM8.365 22a6.356 6.356 0 002.593-5h2.083a6.34 6.34 0 002.422 4.875c.059.043.119.085.179.125z" transform="translate(1 2) translate(-1 -2)" fill="#fafcff"></path></svg></span>
-							<h5 class="font-display  sm:text-xl md:text-2xl md:w-48">Makes a killer first-impression</h5>
-						</div>
-						<p class="font-light px-3 text-gray-100 text-sm  md:pl-0">Make the most of your visitors first few seconds on your site and convince them to stay.</p>
-					</li>
+				<li class="pb-4 mb-4 rounded-b-lg shadow-md  md:mb-0 lg:w-1/3 md:px-8 md:py-6 md:shadow-none md:w-1/2">
+					<div class="bg-blue-200 border-b border-gray-100 flex items-baseline mb-4 px-2 py-4 rounded-t-lg  md:bg-white md:block md:pt-0 md:px-0">
+						<span class="h-10 w-10 rounded-full flex items-center justify-center mr-4  gradient  md:mb-4 md:mr-0"><svg width="24" height="24" viewBox="0 0 24 24"><path data-name="Rectangle 35" fill="none" d="M0 0H24V24H0z"></path><path data-name="Path 15" d="M20.754 21.015L20.582 21a4.38 4.38 0 00-.284.016c-.179.013-.451.034-.781.034-2.721 0-4.18-1.334-4.458-4.049H19V15h-4v-2h3.363A4.409 4.409 0 0023 8.636 4.642 4.642 0 0018.363 4a5.063 5.063 0 00-2.271.492 4.606 4.606 0 00-8.184 0A5.067 5.067 0 005.637 4 4.642 4.642 0 001 8.636 4.407 4.407 0 005.637 13H9v2H5v2h3.942c-.278 2.715-1.738 4.049-4.458 4.049-.331 0-.6-.021-.781-.034A5.076 5.076 0 003.418 21l-.172.015A1.5 1.5 0 003.5 24h17a1.5 1.5 0 00.258-2.985zM10 11H5.637A2.44 2.44 0 013 8.636 2.64 2.64 0 015.637 6a2.486 2.486 0 012.01.777 1 1 0 001.757-.5 2.619 2.619 0 015.192 0 1 1 0 001.757.5A2.487 2.487 0 0118.363 6 2.64 2.64 0 0121 8.636 2.44 2.44 0 0118.363 11H14a1 1 0 00-1 1v3h-2v-3a1 1 0 00-1-1zM8.365 22a6.356 6.356 0 002.593-5h2.083a6.34 6.34 0 002.422 4.875c.059.043.119.085.179.125z" transform="translate(1 2) translate(-1 -2)" fill="#fafcff"></path></svg></span>
+						<h5 class="font-display  sm:text-xl md:text-2xl md:w-48">Makes a killer first-impression</h5>
+					</div>
+					<p class="font-light px-3 text-gray-100 text-sm  md:pl-0">Make the most of your visitors first few seconds on your site and convince them to stay.</p>
+				</li>
 
-				</ul>
-			</div>
+			</ul>
+		</div>
 	</section>
 
 	<section class="container mx-auto px-6 mb-24">
