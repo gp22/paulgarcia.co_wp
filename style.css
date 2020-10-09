@@ -1,21 +1,19 @@
-/*!
-Theme Name: _s
-Theme URI: https://underscores.me/
-Author: Automattic
-Author URI: https://automattic.com/
-Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
-Version: 1.0.0
+/* Theme Name: st2
+Theme URI: https://st2demo.pinegrow.com/
+Author: The Pinegrow Team
+Author URI: http://pinegrow.com/
+Description: The Pinegrow WordPress Starter Theme 2 Reboot Edition (ST2) is a foundation/framework for quickly developing your own custom themes. It is based on Bootstrap 4.x, with a complete set of WordPress common templates and support for Jetpack & WooCommerce. The Pinegrow WordPress Starter Theme 2 is deeply inspired by the <a href="https://understrap.com/">UnderStrap theme</a> and numerous components/files are directly forked from this awesome project.
+Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
+Version: 2.0
+Requires at least: 5.0
+Tested up to: 5.41
+Requires PHP: 7.0
 License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: _s
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: st2
 This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+ST2 is based on UnderStrap https://github.com/understrap/understrap which is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 
-_s is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
+Resource Licenses: Bootstrap: http://getbootstrap.com | https://github.com/twbs/bootstrap/blob/master/LICENSE (Code licensed under MIT, documentation under CC BY 3.0.) jQuery: https://jquery.org | (Code licensed under MIT) */
+/* This file is just used to identify the theme in WordPress. */
+/* Don't add custom styles here, but in assets/sass/theme.scss */

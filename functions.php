@@ -1,218 +1,342 @@
 <?php
-/**
- * _s functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package _s
- */
+if ( ! function_exists( 'st2_setup' ) ) :
 
-if ( ! function_exists( '_s_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
-	function _s_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on _s, use a find and replace
-		 * to change '_s' to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( '_s', get_template_directory() . '/languages' );
+function st2_setup() {
 
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
+    /*
+     * Make theme available for translation.
+     * Translations can be filed in the /languages/ directory.
+     */
+    /* Pinegrow generated Load Text Domain Begin */
+    load_theme_textdomain( 'st2', get_template_directory() . '/languages' );
+    /* Pinegrow generated Load Text Domain End */
 
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
+    // Add default posts and comments RSS feed links to head.
+    add_theme_support( 'automatic-feed-links' );
 
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		add_theme_support( 'post-thumbnails' );
+    /*
+     * Let WordPress manage the document title.
+     */
+    add_theme_support( 'title-tag' );
 
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', '_s' ),
-		) );
+    /*
+     * Enable support for Post Thumbnails on posts and pages.
+     */
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 825, 510, true );
 
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support( 'html5', array(
-			// 'search-form',
-			'comment-form',
-			'comment-list',
-			// 'gallery',
-			'caption',
-		) );
+    // Add menus.
+    register_nav_menus( array(
+        'primary' => __( 'Primary Menu', 'st2' ),
+        'social'  => __( 'Social Links Menu', 'st2' ),
+    ) );
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( '_s_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+    /*
+     * Switch default core markup for search form, comment form, and comments
+     * to output valid HTML5.
+     */
+    add_theme_support( 'html5', array(
+        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+    ) );
 
-		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+    /*
+     * Enable support for Post Formats.
+     */
+    add_theme_support( 'post-formats', array(
+        'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
+    ) );
+}
+endif; // st2_setup
 
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
+add_action( 'after_setup_theme', 'st2_setup' );
 
-		// Add support for editor styles.
-		// add_theme_support( 'editor-styles' );
 
-		// Enqueue editor styles.
-		// add_editor_style( get_stylesheet_directory_uri() . '/public/style-editor.css' );
-	}
+if ( ! function_exists( 'st2_init' ) ) :
+
+function st2_init() {
+
+
+    // Use categories and tags with attachments
+    register_taxonomy_for_object_type( 'category', 'attachment' );
+    register_taxonomy_for_object_type( 'post_tag', 'attachment' );
+
+    /*
+     * Register custom post types. You can also move this code to a plugin.
+     */
+    /* Pinegrow generated Custom Post Types Begin */
+
+    /* Pinegrow generated Custom Post Types End */
+
+    /*
+     * Register custom taxonomies. You can also move this code to a plugin.
+     */
+    /* Pinegrow generated Taxonomies Begin */
+
+    /* Pinegrow generated Taxonomies End */
+
+}
+endif; // st2_setup
+
+add_action( 'init', 'st2_init' );
+
+
+if ( ! function_exists( 'st2_widgets_init' ) ) :
+
+function st2_widgets_init() {
+
+    /*
+     * Register widget areas.
+     */
+    /* Pinegrow generated Register Sidebars Begin */
+
+    register_sidebar( array(
+        'name' => __( 'Hero Slider', 'st2' ),
+        'id' => 'hero',
+        'description' => 'Hero slider area. Place two or more widgets here and they will slide!',
+        'before_widget' => '<div class="carousel-item">',
+        'after_widget' => '</div>',
+        'before_title' => ' ',
+        'after_title' => ' '
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Hero Canvas', 'st2' ),
+        'id' => 'herocanvas',
+        'description' => 'Full size canvas hero area for Bootstrap and other custom HTML markup',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => ''
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Top Full', 'st2' ),
+        'id' => 'statichero',
+        'description' => 'Full top widget with dynamic grid',
+        'before_widget' => '<div id="%1$s" class="static-hero-widget %2$s '. st2_slbd_count_widgets( 'statichero' ) .'">',
+        'after_widget' => '</div><!-- .static-hero-widget -->',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>'
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Left Sidebar', 'st2' ),
+        'id' => 'left-sidebar',
+        'description' => 'Left Sidebar widget area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>'
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Right Sidebar', 'st2' ),
+        'id' => 'right-sidebar',
+        'description' => 'Right Sidebar widget area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>'
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Bottom Full', 'st2' ),
+        'id' => 'footerfull',
+        'description' => 'Full bottom widget with dynamic grid',
+        'before_widget' => '<div id="%1$s" class="footer-widget %2$s '. st2_slbd_count_widgets( 'footerfull' ) .'">',
+        'after_widget' => '</div><!-- .footer-widget -->',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>'
+    ) );
+
+    /* Pinegrow generated Register Sidebars End */
+}
+add_action( 'widgets_init', 'st2_widgets_init' );
+endif;// st2_widgets_init
+
+
+
+if ( ! function_exists( 'st2_customize_register' ) ) :
+
+function st2_customize_register( $wp_customize ) {
+    // Do stuff with $wp_customize, the WP_Customize_Manager object.
+
+    /* Pinegrow generated Customizer Controls Begin */
+
+    $wp_customize->add_section( 'theme_settings', array(
+        'title' => __( 'ST2 Theme Settings', 'st2' ),
+        'description' => __( 'Theme Settings > CAUTION: Work in Progress', 'st2' ),
+        'priority' => '0'
+    ));
+
+    $wp_customize->add_section( 'header_settings', array(
+        'title' => __( 'ST2 Header Settings', 'st2' ),
+        'description' => __( 'Header Settings', 'st2' ),
+        'priority' => '1'
+    ));
+
+    $wp_customize->add_section( 'footer_settings', array(
+        'title' => __( 'ST2 Footer Settings', 'st2' ),
+        'description' => __( 'Footer Settings', 'st2' ),
+        'priority' => '2'
+    ));
+    $pgwp_sanitize = function_exists('pgwp_sanitize_placeholder') ? 'pgwp_sanitize_placeholder' : null;
+
+    $wp_customize->add_setting( 'show_jumbotron', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( 'show_jumbotron', array(
+        'label' => __( 'Show Jumbotron', 'st2' ),
+        'description' => __( 'Activate the Jumbotron. Note: It will be visible on ALL the theme templates. If you need a selective display, use the Hero slider or  Hero Canvas widgets and the Widget Logic plugin.', 'st2' ),
+        'type' => 'checkbox',
+        'section' => 'header_settings'
+    ));
+
+    $wp_customize->add_setting( 'jumbotron_bg_color', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'jumbotron_bg_color', array(
+        'label' => __( 'Jumbotron Background color', 'st2' ),
+        'type' => 'color',
+        'section' => 'header_settings'
+    ) ) );
+
+    $wp_customize->add_setting( 'jumbotron_bg_image', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'jumbotron_bg_image', array(
+        'label' => __( 'Jumbotron Background image', 'st2' ),
+        'type' => 'media',
+        'mime_type' => 'image',
+        'section' => 'header_settings'
+    ) ) );
+
+    $wp_customize->add_setting( 'jumbotron_heading_color', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'jumbotron_heading_color', array(
+        'label' => __( 'Jumbotron Heading Color', 'st2' ),
+        'type' => 'color',
+        'section' => 'header_settings'
+    ) ) );
+
+    $wp_customize->add_setting( 'jumbotron_text_color', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'jumbotron_text_color', array(
+        'label' => __( 'Jumbotron Paragraph Color', 'st2' ),
+        'type' => 'color',
+        'section' => 'header_settings'
+    ) ) );
+
+    $wp_customize->add_setting( 'show_left_sidebar', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( 'show_left_sidebar', array(
+        'label' => __( 'Show Left Sidebar', 'st2' ),
+        'description' => __( 'Activate the Left Sidebar', 'st2' ),
+        'type' => 'checkbox',
+        'section' => 'theme_settings'
+    ));
+
+    $wp_customize->add_setting( 'show_right_sidebar', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( 'show_right_sidebar', array(
+        'label' => __( 'Show Right Sidebar', 'st2' ),
+        'description' => __( 'Activate the Right Sidebar', 'st2' ),
+        'type' => 'checkbox',
+        'section' => 'theme_settings'
+    ));
+
+    $wp_customize->add_setting( 'footer_text', array(
+        'type' => 'theme_mod',
+        'default' => 'Proudly powered by WordPress | Theme: Starter Theme 2 by Pinegrow 2018-2020. (Version: 0.0.0)',
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( 'footer_text', array(
+        'label' => __( 'Footer Content', 'st2' ),
+        'type' => 'textarea',
+        'section' => 'footer_settings'
+    ));
+
+    $wp_customize->add_setting( 'footer_text', array(
+        'type' => 'theme_mod',
+        'default' => 'Proudly powered by WordPress | Theme: Starter Theme 2 by Pinegrow 2018. (Version: 0.0.0)',
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( 'footer_text', array(
+        'label' => __( 'Footer Content', 'st2' ),
+        'type' => 'textarea',
+        'section' => 'footer_settings'
+    ));
+
+    /* Pinegrow generated Customizer Controls End */
+
+}
+add_action( 'customize_register', 'st2_customize_register' );
+endif;// st2_customize_register
+
+
+if ( ! function_exists( 'st2_enqueue_scripts' ) ) :
+    function st2_enqueue_scripts() {
+
+        /* Pinegrow generated Enqueue Scripts Begin */
+
+    wp_enqueue_script( 'jquery', null, null, null, true );
+
+    wp_enqueue_script( 'st2-carousel_init', get_template_directory_uri() . '/assets/js/carousel_init.js', null, null, true );
+
+    wp_enqueue_script( 'st2-popper', get_template_directory_uri() . '/assets/js/popper.js', null, null, true );
+
+    wp_enqueue_script( 'st2-bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', null, null, true );
+
+    wp_enqueue_script( 'st2-outline', get_template_directory_uri() . '/assets/js/outline.js', null, null, true );
+
+    /* Pinegrow generated Enqueue Scripts End */
+
+        /* Pinegrow generated Enqueue Styles Begin */
+
+    wp_deregister_style( 'st2-theme' );
+    wp_enqueue_style( 'st2-theme', get_template_directory_uri() . '/css/theme.css', false, null, 'all');
+
+    wp_deregister_style( 'st2-style' );
+    wp_enqueue_style( 'st2-style', get_bloginfo('stylesheet_url'), false, null, 'all');
+
+    /* Pinegrow generated Enqueue Styles End */
+
+    }
+    add_action( 'wp_enqueue_scripts', 'st2_enqueue_scripts' );
 endif;
-add_action( 'after_setup_theme', '_s_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
+/*
+ * Resource files included by Pinegrow.
  */
-function _s_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
-}
-add_action( 'after_setup_theme', '_s_content_width', 0 );
+/* Pinegrow generated Include Resources Begin */
+require_once "inc/custom.php";
+require_once "inc/wp_pg_helpers.php";
+require_once "inc/bootstrap/wp_bootstrap4_navwalker.php";
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function _s_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', '_s' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', '_s' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', '_s_widgets_init' );
+    /* Pinegrow generated Include Resources End */
 
-/**
- * Enqueue scripts and styles.
- */
-function _s_scripts() {
-	// Loads Google Fonts
-	wp_enqueue_style( 'google-fonts-css', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap', [], '', 'all' );
+/* Don't add custom your custom snippets here, but use inc/custom.php */
+/* ST2 Include Resources Begin */
+require_once "inc/custom.php";
 
-	// Loads required CSS header only.
-	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
-
-	// Loads bundled frontend CSS.
-	wp_enqueue_style( '_s-frontend-styles', get_stylesheet_directory_uri() . '/public/frontend.css' );
-
-	wp_enqueue_script( '_s-frontend-scripts', get_template_directory_uri() . '/public/frontend-bundle.js', array(), null, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', '_s_scripts' );
-
-class Primary_Menu_Walker extends Walker_Nav_Menu {
-	function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
-		$object = $item->object;
-		$type = $item->type;
-		$title = $item->title;
-		$description = $item->description;
-		$permalink = $item->url;
-		$a_classes = 'flex justify-center  sm:border-b-2';
-		$li_classes = 'transition w-1/2  hover:opacity-75 sm:w-auto';
-
-		if ( $title != 'contact' ) {
-			$li_classes .= ' ' . 'border border-gray-100  sm:border-0 sm:mr-6';
-		} else {
-			$li_classes .= ' ' . 'font-bold bg-gray-200 text-white  sm:bg-white sm:text-gray-200';
-		}
-
-		$output .= "<li class='" . $li_classes . ' ' . implode(" ", $item->classes) . "'>";
-
-		$output .= '<a href="' . $permalink . '" class="' . $a_classes . '">';
-
-		$output .= $title;
-
-		$output .= '</a>';
-	}
-}
-
-/**
- * Implement the Custom Header feature.
- */
-// require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
-
-/**
- * Load WooCommerce compatibility file.
- */
-// if ( class_exists( 'WooCommerce' ) ) {
-// 	require get_template_directory() . '/inc/woocommerce.php';
-// }
-
-/**
- * Functions
- * Require all PHP files in the /functions/ directory
- */
-foreach (glob(get_template_directory() . "/functions/*.php") as $function) {
-	$function= basename($function);
-	require get_template_directory() . '/functions/' . $function;
-}
-
-/**
- * Register custom Gutenberg blocks
- */
-// require get_template_directory() . '/inc/gutenberg.php';
+?>
