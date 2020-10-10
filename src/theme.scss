@@ -1,11 +1,11 @@
 // Your Custom Theme & WordPress related CSS rules should come here //
 // Edit bootstrap_theme>custom.scss to add/modify custom rules which are "bootstrap related" //
 
-body {
-    @include media-breakpoint-up("md") {
-      font-size: $font-size-base * 1.125;
-    }
-  }
+// body {
+//     @include media-breakpoint-up("md") {
+//       font-size: $text-lg;
+//     }
+//   }
 
   .hero-container {
     // 50px for the bottom svg height
@@ -49,9 +49,14 @@ body {
   $tracking-tight:   -0.025em;
   $tracking-tighter: -0.05em;
   $tracking-wider:    0.05em;
+  $tracking-widest:   0.1em;
 
   .tracking-wider {
     letter-spacing: $tracking-wider;
+  }
+
+  .tracking-widest {
+    letter-spacing: $tracking-widest;
   }
 
   h1, h2, h3, h4, h5, h6 {
