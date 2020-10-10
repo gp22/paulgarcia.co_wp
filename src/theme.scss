@@ -15,6 +15,8 @@
     // max-height: 700px;
   }
 
+/* Typography
+--------------------------------------------- */
   .text-xs {
     font-size: $text-xs;
   }
@@ -67,8 +69,8 @@
     font-family: $headings-font-family;
   }
 
-  // For setting max width of page content.
-  //
+/* For setting max width of page content
+--------------------------------------------- */
   $wrap: map-get($container-max-widths, "lg");
   .wrap {
     max-width: $wrap;
@@ -78,6 +80,27 @@
       padding-right: 25px;
     }
   }
+
+/* Nav
+--------------------------------------------- */
+.navbar-light {
+  .nav-link {
+    &.active {
+      color: $navbar-light-active-color;
+    }
+
+    &:hover,
+    &:focus {
+      color: $navbar-light-hover-color;
+    }
+
+    &.active,
+    &:hover,
+    &:focus {
+      background-color: rgba($black, .03);
+    }
+  }
+}
 
 /* Pinegrow Starter Styles
 --------------------------------------------- */
