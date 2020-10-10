@@ -3,6 +3,7 @@
 
 /* Colors
 --------------------------------------------- */
+$white:    #fff;
 $gray-100: #f4f5f9;
 $gray-200: #dcdde0;
 $gray-300: #c3c4c7;
@@ -30,10 +31,10 @@ $theme-colors: (
 
 /* Typography
 --------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Hind:wght@500&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700;900&family=Poppins:wght@400;700&display=swap');
 
-$font-family-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$headings-font-family: "Hind", $font-family-sans-serif;
+$font-family-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$headings-font-family: "Fira Sans", $font-family-sans-serif;
 
 $body-color: $black;
 $headings-color: $black;
@@ -117,10 +118,15 @@ $enable-rounded: false;
 
 // navbar
 // $navbar-padding-y: $spacer / 4;
-// $navbar-nav-link-padding-x: $spacer;
-// $nav-link-padding-y: $spacer * 1.5;
+$navbar-nav-link-padding-x: $spacer;
+$nav-link-padding-y: $spacer * 1.5;
 // $nav-link-padding-y: $spacer;
 // $navbar-padding-y: 0;
+$navbar-light-color:           rgba($white, .75);
+$navbar-light-hover-color:     rgba($white, .95);
+$navbar-light-active-color:    rgba($white, .95);
+$navbar-light-disabled-color:  rgba($white, .3);
+$navbar-light-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/></svg>");
 
 // $dropdown-bg: map-get($theme-colors, "primary");
 // $dropdown-link-hover-bg: map-get($theme-colors, "primary");
