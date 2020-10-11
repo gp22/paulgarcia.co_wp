@@ -25,12 +25,33 @@ body {
 /* Hero
 --------------------------------------------- */
 .hero-container {
+    position: relative;
+
+    .hero {
+      height: 768px;
+      z-index: 1;
+    }
+
+    &::after {
+      background-color: $gray-100;
+      bottom: 0;
+      content: '';
+      height: 70vw;
+      left: 0;
+      position: absolute;
+      transform-origin: bottom left;
+      transform: skewY(35deg);
+      width: 100%;
+  }
+}
+
+// .hero-container {
   // 50px for the bottom svg height
   // height: calc(100vh - #{$nav-link-height} - #{$navbar-padding-y * 2} - 50px);
-  height: calc(100vh - #{$nav-link-height} - 50px);
-  min-height: 600px;
+  // height: calc(100vh - #{$nav-link-height} - 50px);
+  // min-height: 600px;
   // max-height: 700px;
-}
+// }
 
 
 /* Typography
@@ -108,6 +129,12 @@ $navbar-height: $font-size-base * $line-height-base + ($nav-link-padding-y * 2) 
 
 .pt-nav {
   padding-top: $navbar-height;
+}
+
+.navbar {
+  @extend .navbar;
+
+  z-index: 9999;
 }
 
 .navbar-light {

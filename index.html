@@ -17,8 +17,8 @@
   </head>
   <body>
     <div class="hfeed site" id="page">
-      <header>
-        <div itemscope="" itemtype="http://schema.org/WebSite" id="wrapper-navbar" wp-template-part wp-template-part-slug="loop-templates/nav" wp-include-template-part wp-include-template-part-slug="loop-templates/nav" class="position-relative">
+      <header data-pg-collapsed>
+        <div itemscope="" itemtype="http://schema.org/WebSite" id="wrapper-navbar" wp-template-part wp-template-part-slug="loop-templates/nav" wp-include-template-part wp-include-template-part-slug="loop-templates/nav" class="position-relative" data-pg-collapsed>
           <a class="skip-link sr-only sr-only-focusable" href="#content" data-pg-collapsed>Skip to content</a>
           <nav class="navbar navbar-expand-sm navbar-light position-absolute text-uppercase text-xs tracking-widest w-100">
             <div class="container-fluid px-0" data-pg-collapsed>
@@ -61,7 +61,7 @@
             </div>
           </div>
         </div>
-        <div class="wrapper container-fluid" id="wrapper-hero" wp-if-is-active-sidebar="hero" data-pg-name="Hero Carousel">
+        <div class="wrapper container-fluid" id="wrapper-hero" wp-if-is-active-sidebar="hero" data-pg-name="Hero Carousel" data-pg-collapsed>
           <div id="HeroCarouselControls" class="carousel slide" data-ride="carousel" data-interval="8000" data-pause="hover" wp-hide>
             <div class="carousel-inner">
               <div class="widget_text carousel-item" wp-register-sidebar="Hero Slider" wp-register-sidebar-id="hero" wp-register-sidebar-description="Hero slider area. Place two or more widgets here and they will slide!" wp-register-sidebar-before="<div class=&quot;carousel-item&quot;>" wp-register-sidebar-after="</div>" wp-dynamic-sidebar="hero" wp-register-sidebar-before-title=" " wp-register-sidebar-after-title=" " wp-dynamic-sidebar-set="element" data-pg-name="Carousel Slide">
@@ -91,7 +91,7 @@
         </div>
         <div class="wrapper container-fluid" id="wrapper-hero" wp-if-is-active-sidebar="herocanvas" wp-register-sidebar="Hero Canvas" wp-register-sidebar-id="herocanvas" wp-register-sidebar-description="Full size canvas hero area for Bootstrap and other custom HTML markup" wp-register-sidebar-before="''" wp-register-sidebar-after="''" wp-register-sidebar-before-title="''" wp-register-sidebar-after-title="''" wp-dynamic-sidebar="herocanvas" data-pg-name="Hero Canvas">
 </div>
-        <div class="wrapper" id="wrapper-static-hero" wp-if-is-active-sidebar="statichero" data-pg-name="Full Top Widgets">
+        <div class="wrapper" id="wrapper-static-hero" wp-if-is-active-sidebar="statichero" data-pg-name="Full Top Widgets" data-pg-collapsed>
           <div id="wrapper-static-content" tabindex="-1" class="container">
             <div class="row">
               <div id="custom_html-6" class="widget_text static-hero-widget widget_custom_html widget-count-2 col-md-6" wp-register-sidebar="Top Full" wp-register-sidebar-id="statichero" wp-register-sidebar-description="Full top widget with dynamic grid" wp-register-sidebar-before="'<div id=&quot;%1$s&quot; class=&quot;static-hero-widget %2$s '. st2_slbd_count_widgets( 'statichero' ) .'&quot;>'" wp-register-sidebar-after="</div><!-- .static-hero-widget -->" wp-register-sidebar-before-title="<h3 class=&quot;widget-title&quot;>" wp-dynamic-sidebar="statichero" wp-dynamic-sidebar-set="element">

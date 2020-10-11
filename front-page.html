@@ -17,10 +17,10 @@
   </head>
   <body>
     <div class="hfeed site" id="page">
-      <header>
+      <header data-pg-collapsed>
         <div itemscope="" itemtype="http://schema.org/WebSite" id="wrapper-navbar" wp-include-template-part wp-include-template-part-slug="loop-templates/nav" class="position-relative">
           <a class="skip-link sr-only sr-only-focusable" href="#content">Skip to content</a>
-          <nav class="navbar navbar-expand-lg navbar-light position-absolute text-uppercase text-xs tracking-widest w-100" style="z-index: 1;">
+          <nav class="navbar navbar-expand-lg navbar-light position-absolute text-uppercase text-xs tracking-widest w-100" data-pg-collapsed>
             <div class="container-fluid px-0" data-pg-collapsed>
               <div data-pg-name="Brand Without Custom Logo" wp-if-custom="has_custom_logo()" wp-if-custom-not="true" data-pg-collapsed>
                 <a rel="home" class="navbar-brand" href="#" cms-site-name>ST2 Reboot Edition</a>
@@ -110,18 +110,20 @@
           </div>
         </div>
       </header>
-      <div class="align-items-center bg-primary container-fluid d-flex" data-pg-collapsed style="height: 768px;">
-        <div class="row">
-          <div class="col-lg-6 col-md-4" data-pg-collapsed>
-            <h3>Column title</h3> 
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
-          </div>
-          <div class="col-lg-6 col-md-4" data-pg-collapsed>
-            <h3>Column title</h3> 
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+      <section class="bg-primary hero-container">
+        <div class="align-items-center container-fluid d-flex hero">
+          <div class="row">
+            <div class="col-lg-6 col-md-4" data-pg-collapsed>
+              <h3>Column title</h3> 
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+            </div>
+            <div class="col-lg-6 col-md-4" data-pg-collapsed>
+              <h3>Column title</h3> 
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+            </div>
           </div>
         </div>
-      </div>
+      </section>
       <div wp-site-content data-pg-collapsed>
         <div id="page-wrapper" class="wrapper">
           <div class="container" id="content" tabindex="-1">
