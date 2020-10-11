@@ -1,88 +1,115 @@
 // Your Custom Theme & WordPress related CSS rules should come here //
 // Edit bootstrap_theme>custom.scss to add/modify custom rules which are "bootstrap related" //
 
-// body {
-//     @include media-breakpoint-up("md") {
-//       font-size: $text-lg;
-//     }
-//   }
 
-  .hero-container {
-    // 50px for the bottom svg height
-    // height: calc(100vh - #{$nav-link-height} - #{$navbar-padding-y * 2} - 50px);
-    height: calc(100vh - #{$nav-link-height} - 50px);
-    min-height: 600px;
-    // max-height: 700px;
-  }
+/* body and html
+--------------------------------------------- */
+html {
+  background-color: $gray-200;
+}
+
+$body-max-width: 1366px;
+
+body {
+  max-width: $body-max-width;
+
+  @extend .mx-auto;
+  @extend .shadow-lg;
+
+  // @include media-breakpoint-up("md") {
+  //   font-size: $text-lg;
+  // }
+}
+
+
+/* Hero
+--------------------------------------------- */
+.hero-container {
+  // 50px for the bottom svg height
+  // height: calc(100vh - #{$nav-link-height} - #{$navbar-padding-y * 2} - 50px);
+  height: calc(100vh - #{$nav-link-height} - 50px);
+  min-height: 600px;
+  // max-height: 700px;
+}
+
 
 /* Typography
 --------------------------------------------- */
-  .text-xs {
-    font-size: $text-xs;
-  }
+.text-xs {
+  font-size: $text-xs;
+}
 
-  .text-sm {
-    font-size: $text-sm;
-  }
+.text-sm {
+  font-size: $text-sm;
+}
 
-  .text-lg {
-    font-size: $text-lg;
-  }
+.text-lg {
+  font-size: $text-lg;
+}
 
-  .text-xl {
-    font-size: $text-xl;
-  }
+.text-xl {
+  font-size: $text-xl;
+}
 
-  .text-2xl {
-    font-size: $text-2xl;
-  }
+.text-2xl {
+  font-size: $text-2xl;
+}
 
-  .text-3xl {
-    font-size: $text-3xl;
-  }
+.text-3xl {
+  font-size: $text-3xl;
+}
 
-  .text-4xl {
-    font-size: $text-4xl;
-  }
+.text-4xl {
+  font-size: $text-4xl;
+}
 
-  .text-white-75 { color: rgba($white, .75) !important; }
+.text-white-75 { color: rgba($white, .75) !important; }
 
-  // Tracking
-  $tracking-tight:   -0.025em;
-  $tracking-tighter: -0.05em;
-  $tracking-wider:    0.05em;
-  $tracking-widest:   0.1em;
+// Tracking
+$tracking-tight:   -0.025em;
+$tracking-tighter: -0.05em;
+$tracking-wider:    0.05em;
+$tracking-widest:   0.1em;
 
-  .tracking-wider {
-    letter-spacing: $tracking-wider;
-  }
+.tracking-wider {
+  letter-spacing: $tracking-wider;
+}
 
-  .tracking-widest {
-    letter-spacing: $tracking-widest;
-  }
+.tracking-widest {
+  letter-spacing: $tracking-widest;
+}
 
-  h1, h2, h3, h4, h5, h6 {
-    letter-spacing: $tracking-tight;
-  }
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: $tracking-tight;
+}
 
-  .font-heading {
-    font-family: $headings-font-family;
-  }
+.font-heading {
+  font-family: $headings-font-family;
+}
+
 
 /* For setting max width of page content
 --------------------------------------------- */
-  $wrap: map-get($container-max-widths, "lg");
-  .wrap {
-    max-width: $wrap;
+$wrap: map-get($container-max-widths, "lg");
 
-    @include media-breakpoint-up("md") {
-      padding-left: 25px;
-      padding-right: 25px;
-    }
+.wrap {
+  max-width: $wrap;
+
+  @include media-breakpoint-up("md") {
+    padding-left: 25px;
+    padding-right: 25px;
   }
+}
+
 
 /* Nav
 --------------------------------------------- */
+$navbar-height: $font-size-base * $line-height-base + ($nav-link-padding-y * 2) + ($navbar-padding-y * 2);
+
+.pt-nav {
+  padding-top: $navbar-height;
+}
+
 .navbar-light {
   .nav-link {
     &.active {
@@ -101,6 +128,7 @@
     }
   }
 }
+
 
 /* Pinegrow Starter Styles
 --------------------------------------------- */
