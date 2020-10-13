@@ -25,23 +25,46 @@ body {
 /* Hero
 --------------------------------------------- */
 .hero-container {
-    position: relative;
+  background: linear-gradient(to right bottom, map-get($theme-colors, "primary") 25%, map-get($theme-colors, "secondary"));
+  overflow: hidden;
+  position: relative;
 
-    .hero {
-      height: 768px;
-      z-index: 1;
+  .hero {
+    height: 768px;
+    z-index: 1;
+  }
+
+  .hero-macbook-pro {
+    max-width: none;
+    width: 120%;
+  }
+
+  &::after {
+    background-color: $gray-100;
+    bottom: 0;
+    content: '';
+    height: 768px;
+    left: 0;
+    position: absolute;
+    transform-origin: bottom right;
+    transform: skew(25deg);
+    width: 100%;
+
+    @include media-breakpoint-up("sm") {
+      transform: skew(35deg);
     }
 
-    &::after {
-      background-color: $gray-100;
-      bottom: 0;
-      content: '';
-      height: 70vw;
-      left: 0;
-      position: absolute;
-      transform-origin: bottom left;
-      transform: skewY(35deg);
-      width: 100%;
+    @include media-breakpoint-up("md") {
+      transform: skew(40deg);
+    }
+
+    @include media-breakpoint-up("lg") {
+      transform: skew(50deg);
+    }
+
+    @include media-breakpoint-up("xl") {
+      transform: skew(57deg);
+    }
   }
 }
 
