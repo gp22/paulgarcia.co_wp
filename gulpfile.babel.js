@@ -8,10 +8,11 @@ import cleanCss from "gulp-clean-css";
 import purgecss from "gulp-purgecss";
 import purgecssWordpress from "purgecss-with-wordpress";
 import gulpif from "gulp-if";
+import named from "vinyl-named";
 // import imagemin from "gulp-imagemin";
-// import del from "del";
-// import webpack from "webpack-stream";
-// import uglify from "gulp-uglify";
+import del from "del";
+import webpack from "webpack-stream";
+import uglify from "gulp-uglify";
 // import browserSync from "browser-sync";
 
 // let server = browserSync.create();
@@ -19,17 +20,17 @@ const PROD = yargs.argv.prod;
 
 let paths = {
 	styles: {
-		src: ["src/style.scss" /* "src/scss/admin.scss" */],
+		src: ["src/scss/style.scss" /* "src/scss/admin.scss" */],
 		dest: "build/css",
 	},
 	// images: {
 	// 	src: "src/img/**/*.{jpg,jpeg,png,svg,gif}",
 	// 	dest: "public/img",
 	// },
-	// scripts: {
-	// 	src: ["src/js/index.js" /* "src/js/admin.js" */],
-	// 	dest: "public/js",
-	// },
+	scripts: {
+		src: ["src/js/index.js" /* "src/js/admin.js" */],
+		dest: "build/js",
+	},
 	// other: {
 	// 	src: ["src/**/*", "!src/{img,js,scss}", "!src/{img,js,scss}/**/*"],
 	// 	dest: "public",
@@ -65,6 +66,7 @@ let paths = {
 // };
 
 // export let clean = () => del(["public", "package"]);
+export let clean = () => del(["build"]);
 
 export let styles = (done) => {
 	// return (
@@ -104,54 +106,57 @@ export let styles = (done) => {
 
 export let watch = () => {
 	gulp.watch("src/**/*.scss", styles);
+	gulp.watch("src/js/**/*.js", scripts);
 	// gulp.watch("src/js/**/*.js", gulp.series(scripts, reload));
 	// gulp.watch("**/*.php", reload);
 	// gulp.watch(paths.images.src, gulp.series(images, reload));
 	// gulp.watch(paths.other.src, gulp.series(copy, reload));
 };
 
-// export let scripts = () => {
-// 	return gulp
-// 		.src(paths.scripts.src)
-// 		.pipe(named())
-// 		.pipe(
-// 			webpack({
-// 				module: {
-// 					rules: [
-// 						{
-// 							test: /\.js$/,
-// 							use: {
-// 								loader: "babel-loader",
-// 								options: {
-// 									presets: ["@babel/preset-env"],
-// 								},
-// 							},
-// 						},
-// 					],
-// 				},
-// 				output: {
-// 					filename: "[name].js",
-// 				},
-// 				devtool: !PROD ? "inline-source-map" : false,
-// 			})
-// 		)
-// 		.pipe(gulpif(PROD, uglify()))
-// 		.pipe(gulp.dest(paths.scripts.dest));
-// };
+export let scripts = () => {
+	return gulp
+		.src(paths.scripts.src)
+		.pipe(named())
+		.pipe(
+			webpack({
+				module: {
+					rules: [
+						{
+							test: /\.js$/,
+							use: {
+								loader: "babel-loader",
+								options: {
+									presets: ["@babel/preset-env"],
+								},
+							},
+						},
+					],
+				},
+				output: {
+					filename: "[name].js",
+				},
+				devtool: !PROD ? "inline-source-map" : false,
+			})
+		)
+		.pipe(gulpif(PROD, uglify()))
+		.pipe(gulp.dest(paths.scripts.dest));
+};
 
 export let dev = gulp.series(
-	// clean,
+	clean,
 	// gulp.parallel(styles, scripts, images, copy),
-	styles,
+	gulp.parallel(styles, scripts),
+	// styles,
 	// serve,
 	watch
 );
 
-// export let build = gulp.series(
-// 	clean,
-// 	gulp.parallel(styles, scripts, images, copy)
-// );
+export let build = gulp.series(
+	clean,
+	// gulp.parallel(styles, scripts, images, copy)
+	gulp.parallel(styles, scripts)
+);
 
-export let build = gulp.series(styles);
+// export let build = gulp.series(styles);
 
 export default dev;

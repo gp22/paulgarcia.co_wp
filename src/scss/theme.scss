@@ -39,6 +39,11 @@ body {
     width: 120%;
   }
 
+  .wordpress {
+    background-color: $wordpress-100;
+    color: $wordpress-200;
+  }
+
   &::after {
     background-color: $gray-100;
     bottom: 0;
@@ -179,6 +184,11 @@ $navbar-height: $font-size-base * $line-height-base + ($nav-link-padding-y * 2) 
   }
 }
 
+/* Shadow
+--------------------------------------------- */
+.shadow-lg-dark {
+  box-shadow: 0 1rem 3rem rgba($black, .3);
+}
 
 /* Pinegrow Starter Styles
 --------------------------------------------- */
